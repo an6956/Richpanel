@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose the Right Plan for You</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: blue;
+      color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .toggle-button {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .toggle-button button {
+      background-color: #3498db;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .toggle-button button:hover {
+      background-color: #2980b9;
+    }
+
+    .plans {
+      display: table;
+      width: 100%;
+      
+    }
+
+    .row {
+      display: table-row;
+    }
+
+    .column {
+      display: table-cell;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      padding: 20px;
+      text-align: center;
+      width: 25%;
+      margin: 10px;
+      color: black; /* Change text color to black */
+    }
+
+    .column h2 {
+      font-size: 24px;
+    }
+
+    .column p {
+      margin: 5px 0;
+    }
+
+    .plan-checkbox {
+      margin-top: 10px;
+    }
+
+    .next-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .next-button button {
+      background-color: #3498db;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .next-button button:hover {
+      background-color: #2980b9;
+    }
+    .plans-yearly {
+      display: none;
+      margin-left: 11%;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Choose the Right Plan for You</h1>
+    </div>
+
+    <div class="toggle-button">
+      <button id="monthlyButton">Monthly</button>
+      <button id="yearlyButton">Yearly</button>
+    </div>
+
+    <div class="plans">
+      <div class="plans-monthly">
+      <div class="row">
+        <!-- Mobile Plan -->
+        <div class="column">
+          <h2>Mobile Plan</h2>
+          <p>Monthly Price: Rs.100</p>
+          <p>Video Quality: Good</p>
+          <p>Resolution: 480p</p>
+          <p>Devices: Phone, Tablet</p>
+          <input type="checkbox" class="plan-checkbox">
+          </div>
+        
+
+        <!-- Basic Plan -->
+        <div class="column">
+          <h2>Basic Plan</h2>
+          <p>Monthly Price: Rs.200</p>
+          <p>Video Quality: Good</p>
+          <p>Resolution: 480p</p>
+          <p>Devices: Phone, Tablet, Computer, TV</p>
+          <input type="checkbox" class="plan-checkbox">
+        </div>
+
+        <!-- Standard Plan -->
+        <div class="column">
+          <h2>Standard Plan</h2>
+          <p>Monthly Price: Rs.500</p>
+          <p>Video Quality: Better</p>
+          <p>Resolution: 1080p</p>
+          <p>Devices: Phone, Tablet, Computer, TV</p>
+          <input type="checkbox" class="plan-checkbox">
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="column">
+          <h2>Premium Plan</h2>
+          <p>Monthly Price: Rs.700</p>
+          <p>Video Quality: Best</p>
+          <p>Resolution: 4K + HDR</p>
+          <p>Devices: Phone, Tablet, Computer, TV</p>
+          <input type="checkbox" class="plan-checkbox">
+        </div>
+      </div>
+        <div class="next-button">
+          <a href="payment.html"><button id="nextButton" disabled>Next</a></button>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+  <div class="plans">
+    <div class="plans-yearly">
+    <div class="row">
+        <!-- Mobile Plan -->
+        <div class="column">
+            <h2>Mobile Plan</h2>
+            <p>Yearly Price: Rs.1000</p>
+            <p>Video Quality: Good</p>
+            <p>Resolution: 480p</p>
+            <p>Devices: Phone, Tablet</p>
+            <input type="checkbox" class="plan-checkbox-yearly">
+        </div>
+
+        <!-- Basic Plan -->
+        <div class="column">
+            <h2>Basic Plan</h2>
+            <p>Yearly Price: Rs.2000</p>
+            <p>Video Quality: Good</p>
+            <p>Resolution: 480p</p>
+            <p>Devices: Phone, Tablet, Computer, TV</p>
+            <input type="checkbox" class="plan-checkbox-yearly">
+        </div>
+
+        <!-- Standard Plan -->
+        <div class="column">
+            <h2>Standard Plan</h2>
+            <p>Yearly Price: Rs.5000</p>
+            <p>Video Quality: Better</p>
+            <p>Resolution: 1080p</p>
+            <p>Devices: Phone, Tablet, Computer, TV</p>
+            <input type="checkbox" class="plan-checkbox-yearly">
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="column">
+            <h2>Premium Plan</h2>
+            <p>Yearly Price: Rs.7000</p>
+            <p>Video Quality: Best</p>
+            <p>Resolution: 4K + HDR</p>
+            <p>Devices: Phone, Tablet, Computer, TV</p>
+            <input type="checkbox" class="plan-checkbox-yearly">
+        </div>
+        
+      </div>
+      
+      <div class="next-button">
+       <a href="payment.html"><button id="nextButton" disabled>Next</a></button>
+        
+    </div>
+</div>
+
+
+
+<script>
+    const checkboxesYearly = document.querySelectorAll('.plan-checkbox-yearly');
+    const nextButtonYearly = document.getElementById('nextButtonYearly');
+
+    checkboxesYearly.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            checkboxesYearly.forEach(otherCheckbox => {
+                if (otherCheckbox !== checkbox) {
+                    otherCheckbox.checked = false;
+                }
+            });
+
+            const anyCheckboxCheckedYearly = Array.from(checkboxesYearly).some(checkbox => checkbox.checked);
+            nextButtonYearly.disabled = !anyCheckboxCheckedYearly;
+        });
+    });
+</script>
+
+  <script>
+    const checkboxes = document.querySelectorAll('.plan-checkbox');
+    const nextButton = document.getElementById('nextButton');
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        checkboxes.forEach(otherCheckbox => {
+          if (otherCheckbox !== checkbox) {
+            otherCheckbox.checked = false;
+          }
+        });
+        
+        const anyCheckboxChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+        nextButton.disabled = !anyCheckboxChecked;
+      });
+    });
+    
+      const monthlyButton = document.getElementById('monthlyButton');
+      const yearlyButton = document.getElementById('yearlyButton');
+      const plansMonthly = document.querySelector('.plans-monthly');
+      const plansYearly = document.querySelector('.plans-yearly');
+  
+      monthlyButton.addEventListener('click', () => {
+        plansMonthly.style.display = 'block';
+        plansYearly.style.display = 'none';
+      });
+  
+      yearlyButton.addEventListener('click', () => {
+        plansMonthly.style.display = 'none';
+        plansYearly.style.display = 'block';
+      });
+  </script>
+</body>
+</html>
